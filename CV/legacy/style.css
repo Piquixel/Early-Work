@@ -1,0 +1,237 @@
+::-webkit-scrollbar {
+	width: 5px;
+	background: #171717;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #383838;
+}
+
+@font-face {
+	font-family: 'comfortaaregular';
+	src: url('../../assets/fonts/comfortaa-regular-webfont.woff2')
+			format('woff2'),
+		url('../../assets/fonts/comfortaa-regular-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'adam';
+	src: url('../../assets/fonts/adam-webfont.woff2') format('woff2'),
+		url('../../assets/fonts/adam-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'champagne-limousine';
+	src: url('../../assets/fonts/champagne__limousines-webfont.woff2')
+			format('woff2'),
+		url('../../assets/fonts/champagne__limousines-webfont.woff')
+			format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@keyframes loadDoc {
+	from {
+		top: 150%;
+	}
+
+	to {
+		top: 50%;
+	}
+}
+
+@-webkit-keyframes loadDoc {
+	from {
+		top: 150%;
+	}
+
+	to {
+		top: 50%;
+	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+html {
+	overflow: hidden;
+	background-color: #121212;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+#doc-contain {
+	position: fixed;
+	width: 22vw;
+	height: 125vh;
+	max-height: 75vh;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 3px solid transparent;
+	border-radius: 20px;
+	box-shadow: 0 0 20px 7px black;
+	background-color: #dbdbdb;
+	animation-name: containLoad;
+	animation-duration: 0.6s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: containLoad;
+	-webkit-animation-duration: 0.6s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+#doc-menu {
+	position: relative;
+	background-color: #dbdbdb;
+	border: 3px solid #dbdbdb;
+	border-bottom: none;
+	border-radius: 20px 20px 0 0;
+	width: 22vw;
+	min-width: 390px;
+	height: 60px;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+#doc-menu div {
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	display: inline-block;
+	margin-top: 5px;
+}
+
+#doc-menu a {
+	color: #121212;
+	font-family: 'champagne-limousine', sans-serif;
+	margin-left: 2.5px;
+	margin-right: 2.5px;
+	text-align: center;
+}
+
+#doc {
+	position: relative;
+	scroll-behavior: smooth;
+	width: 22vw;
+	min-width: 390px;
+	height: 125vh;
+	max-height: 75vh;
+	overflow: auto;
+	overflow-x: hidden;
+	background-color: #fbfbfb;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 3px solid #dbdbdb;
+	border-top: none;
+	border-radius: 20px;
+	box-shadow: inset 0 0 20px black;
+	animation-name: loadDoc;
+	animation-duration: 0.55s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in-out;
+	-webkit-animation-name: loadDoc;
+	-webkit-animation-duration: 0.55s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+#doc::-webkit-scrollbar {
+	background: transparent;
+	border: 20px solid transparent;
+}
+
+#doc::-webkit-scrollbar-thumb {
+	background-color: rgba(0, 0, 0, 0.6);
+	border-radius: 10px;
+}
+
+#doc::-webkit-scrollbar-button {
+	background: transparent;
+}
+
+#doc img {
+	position: relative;
+	width: 50%;
+	top: 20px;
+	left: 50%;
+	transform: translate(-50%) scale(0.8);
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+	border-radius: 100%;
+	margin-bottom: 20px;
+	transition: 0.5s ease;
+}
+
+#doc img:hover {
+	transform: translate(-50%) scale(1);
+}
+
+#doc h1 {
+	position: relative;
+	text-align: center;
+	margin-top: 15px;
+	left: 50%;
+	transform: translate(-50%);
+	font-family: 'adam', sans-serif;
+}
+
+#doc h2 {
+	font-family: 'champagne-limousine', sans-serif;
+	text-align: center;
+	transform: translate(0, 10px);
+	letter-spacing: 0.05em;
+}
+
+#doc ul {
+	position: relative;
+	display: inline-block;
+}
+
+#doc ul li {
+	list-style-type: circle;
+	margin-bottom: 10px;
+}
+
+#doc ul li a {
+	font-family: 'comfortaaregular', sans-serif;
+}
+
+#doc p {
+	font-family: 'comfortaaregular', sans-serif;
+	margin-top: 25px;
+	text-align: center;
+}
+
+#doc #ip {
+	margin-top: 25px;
+}
+
+.box h2::before {
+	content: '►';
+	margin-right: 0;
+	opacity: 0;
+	transition: 0.75s ease-in-out;
+}
+
+.box:target h2::before {
+	margin-right: 10px;
+	opacity: 1;
+	color: royalblue;
+}
