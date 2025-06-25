@@ -1,0 +1,93 @@
+@font-face {
+	font-family: 'champagne-limousine';
+	src: url('./fonts/champagne__limousines-webfont.woff2') format('woff2'),
+		url('./fonts/champagne__limousines-webfont.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	box-sizing: border-box;
+	outline: none;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #121212;
+}
+
+a {
+	text-decoration: none;
+}
+
+.box {
+	height: 100vh;
+	width: 100vw;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	display: table;
+}
+
+h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	color: #fff;
+	font-size: 48px;
+	margin: 0;
+	text-align: center;
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#first {
+	background-image: url(https://picsum.photos/1920/1080); /* Lost original Image. Using Lorem Picsum instead */
+}
+
+#sec {
+	background-color: #fff;
+	background-attachment: scroll;
+}
+
+#third {
+	background-image: url(https://picsum.photos/1920/1080?random=1); /* Lost original Image. Using Lorem Picsum instead */
+	background-attachment: fixed;
+}
+
+#fourth {
+	background-color: #fff;
+	background-attachment: scroll;
+}
+
+#fifth {
+	background-image: url(https://picsum.photos/1920/1080?random=2); /* Lost original Image. Using Lorem Picsum instead */
+	background-attachment: fixed;
+}
+
+.dark {
+	color: black;
+}
+
+#side-menu {
+	position: fixed;
+	background: #272727;
+	top: 50%;
+	transform: translate(0, -50%);
+	display: grid;
+	width: 50px;
+	height: 150px;
+	border-radius: 0 25px 25px 0;
+}
+
+#side-menu a {
+	color: #fff;
+	text-align: center;
+	transform: translate(0, 25%);
+	font-family: 'champagne-limousine', sans-serif;
+}
